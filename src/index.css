@@ -114,8 +114,10 @@
     width: 100%;
   }
 
-  body, a, button, [role="button"] {
-    cursor: none !important;
+  @media (min-width: 768px) {
+    body, a, button, [role="button"] {
+      cursor: none !important;
+    }
   }
 }
 
