@@ -112,7 +112,9 @@ export const ContactSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-display font-bold">
+          <h2
+            className="mt-8 text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-display font-bold flex flex-col items-center"
+          >
             Get In <span className="gradient-text">Touch</span>
           </h2>
           <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
@@ -149,7 +151,7 @@ export const ContactSection = () => {
                         <p className="text-sm text-muted-foreground">
                           {info.label}
                         </p>
-                        <p className="font-medium text-foreground">
+                        <p className="font-medium text-foreground break-all sm:break-normal">
                           {info.value}
                         </p>
                       </div>

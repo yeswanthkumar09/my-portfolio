@@ -106,7 +106,7 @@ export const HeroSection = () => {
                 },
               },
             }}
-            className="mt-8 text-4xl md:text-6xl lg:text-7xl font-display font-bold flex flex-col items-center"
+            className="mt-8 text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-display font-bold flex flex-col items-center"
           >
             <span className="gradient-text glow-text flex flex-wrap justify-center">
               {"Yeswanth Kumar".split("").map((char, index) => (
@@ -143,7 +143,7 @@ export const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="mt-6 text-xl md:text-2xl text-primary font-medium"
+            className="mt-6 text-lg sm:text-xl md:text-2xl text-primary font-medium"
           >
             Full-Stack Software Developer
           </motion.p>

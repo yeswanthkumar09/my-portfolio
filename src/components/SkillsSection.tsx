@@ -110,7 +110,7 @@ const SkillItem = ({ skill, index, isInView }: { skill: { name: string, icon: Re
       }}
       className="relative group h-full"
     >
-      <div className="relative p-6 rounded-2xl bg-secondary/10 border border-border/50 backdrop-blur-sm group-hover:border-primary/40 group-hover:bg-primary/[0.05] transition-all duration-500 shadow-lg group-hover:shadow-primary/20 overflow-hidden flex flex-col items-center justify-center gap-4 h-full">
+      <div className="relative p-4 md:p-6 rounded-2xl bg-secondary/10 border border-border/50 backdrop-blur-sm group-hover:border-primary/40 group-hover:bg-primary/[0.05] transition-all duration-500 shadow-lg group-hover:shadow-primary/20 overflow-hidden flex flex-col items-center justify-center gap-4 h-full">
         {/* Glow Effect */}
         <div
           className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500"
