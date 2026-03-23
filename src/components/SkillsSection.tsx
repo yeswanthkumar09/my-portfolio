@@ -25,7 +25,8 @@ import {
   Layout,
   MousePointer2,
   Search,
-  Binary
+  Binary,
+  Network
 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -65,6 +66,14 @@ const skillCategories = [
       { name: "Postman", icon: Workflow, color: "#ff6c37" },
       { name: "Git & GitHub", icon: Github, color: "#f05032" },
       { name: "Figma", icon: Figma, color: "#f24e1e" },
+    ],
+  },
+  {
+    title: "System Design & DSA",
+    icon: Network,
+    skills: [
+      { name: "System Design", icon: Workflow, color: "#00bcd4" },
+      { name: "DSA", icon: Binary, color: "#ff9800" },
     ],
   },
 ];
@@ -170,7 +179,7 @@ export const SkillsSection = () => {
                 <div className="p-4 rounded-2xl bg-primary/10 text-primary border border-primary/20 shadow-[0_0_20px_rgba(var(--primary),0.1)]">
                   <category.icon className="w-8 h-8" />
                 </div>
-                <h3 className="text-3xl md:text-4xl font-display font-black tracking-tight whitespace-nowrap">
+                <h3 className="text-xl sm:text-2xl md:text-4xl font-display font-black tracking-tight whitespace-nowrap">
                   {category.title}
                 </h3>
                 <div className="h-0.5 w-full bg-gradient-to-r from-primary/40 via-primary/10 to-transparent rounded-full" />

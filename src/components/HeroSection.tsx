@@ -41,7 +41,7 @@ const TiltAvatar = () => {
         rotateY,
         transformStyle: "preserve-3d",
       }}
-      className="relative w-44 h-44 md:w-52 md:h-52 cursor-pointer perspective-1000 mb-8"
+      className="relative w-44 h-44 md:w-64 md:h-64 cursor-pointer perspective-1000 mb-8 lg:mb-0"
     >
       {/* Main Avatar */}
       <motion.div
@@ -81,147 +81,150 @@ export const HeroSection = () => {
       <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="container mx-auto px-4 md:px-8 relative z-10 pt-24 md:pt-32">
-        <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
-
+        <div className="grid lg:grid-cols-[1fr_1.5fr] gap-12 items-center max-w-6xl mx-auto">
           {/* Parallax 3D Avatar */}
           <motion.div
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
+            className="flex justify-center lg:justify-center"
           >
             <TiltAvatar />
           </motion.div>
 
-          {/* Name */}
-          <motion.h1
-            initial="hidden"
-            animate="visible"
-            variants={{
-              hidden: { opacity: 0 },
-              visible: {
-                opacity: 1,
-                transition: {
-                  staggerChildren: 0.05,
-                  delayChildren: 0.2,
+          {/* Content Column */}
+          <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
+            {/* Name */}
+            <motion.h1
+              initial="hidden"
+              animate="visible"
+              variants={{
+                hidden: { opacity: 0 },
+                visible: {
+                  opacity: 1,
+                  transition: {
+                    staggerChildren: 0.05,
+                    delayChildren: 0.2,
+                  },
                 },
-              },
-            }}
-            className="mt-8 text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-display font-bold flex flex-col items-center"
-          >
-            <span className="gradient-text glow-text flex flex-wrap justify-center">
-              {"Yeswanth Kumar".split("").map((char, index) => (
-                <motion.span
-                  key={`first-${index}`}
-                  variants={{
-                    hidden: { opacity: 0, y: 20 },
-                    visible: { opacity: 1, y: 0 },
-                  }}
-                  className="inline-block"
-                >
-                  {char === " " ? "\u00A0" : char}
-                </motion.span>
-              ))}
-            </span>
-            <span className="text-foreground flex flex-wrap justify-center">
-              {"Agathamudi".split("").map((char, index) => (
-                <motion.span
-                  key={`last-${index}`}
-                  variants={{
-                    hidden: { opacity: 0, y: 20 },
-                    visible: { opacity: 1, y: 0 },
-                  }}
-                  className="inline-block"
-                >
-                  {char}
-                </motion.span>
-              ))}
-            </span>
-          </motion.h1>
-
-          {/* Headline */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="mt-6 text-lg sm:text-xl md:text-2xl text-primary font-medium"
-          >
-            Full-Stack Software Developer
-          </motion.p>
-
-          {/* Bio */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.6 }}
-            className="mt-4 text-lg md:text-xl text-muted-foreground max-w-2xl"
-          >
-            Passionate about building scalable and high-performance full-stack applications. Focused on delivering clean, efficient, and production-ready solutions that solve real-world problems.         </motion.p>
-
-          {/* CTA Buttons */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.8 }}
-            className="mt-8 flex flex-col sm:flex-row gap-4"
-          >
-            <Button
-              size="lg"
-              className="glow-sm hover:glow transition-all duration-300"
-              onClick={() => scrollToSection("#projects")}
+              }}
+              className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-display font-bold flex flex-col items-center lg:items-start"
             >
-              View Projects
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-primary/50 hover:bg-primary/10"
-              onClick={() => scrollToSection("#contact")}
+              <span className="gradient-text glow-text flex flex-wrap justify-center lg:justify-start">
+                {"Yeswanth Kumar".split("").map((char, index) => (
+                  <motion.span
+                    key={`first-${index}`}
+                    variants={{
+                      hidden: { opacity: 0, y: 20 },
+                      visible: { opacity: 1, y: 0 },
+                    }}
+                    className="inline-block"
+                  >
+                    {char === " " ? "\u00A0" : char}
+                  </motion.span>
+                ))}
+              </span>
+              <span className="text-foreground flex flex-wrap justify-center lg:justify-start">
+                {"Agathamudi".split("").map((char, index) => (
+                  <motion.span
+                    key={`last-${index}`}
+                    variants={{
+                      hidden: { opacity: 0, y: 20 },
+                      visible: { opacity: 1, y: 0 },
+                    }}
+                    className="inline-block"
+                  >
+                    {char}
+                  </motion.span>
+                ))}
+              </span>
+            </motion.h1>
+
+            {/* Headline */}
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="mt-6 text-lg sm:text-xl md:text-2xl text-primary font-medium"
             >
-              Contact Me
-            </Button>
-            <Button
-              size="lg"
-              variant="secondary"
-              className="hover:bg-secondary/80"
-              asChild
+              Full-Stack Software Developer
+            </motion.p>
+
+            {/* Bio */}
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.6 }}
+              className="mt-4 text-lg md:text-xl text-muted-foreground max-w-3xl"
             >
-              <a href="/new-cv-06.pdf" target="_blank" rel="noopener noreferrer" download="Yeswanth_CV.pdf">
-                <Download className="w-4 h-4 mr-2" />
-                Download CV
+              Passionate about building scalable and high-performance full-stack applications. Focused on delivering clean, efficient, and production-ready solutions that solve real-world problems.         </motion.p>
+
+            {/* CTA Buttons */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.8 }}
+              className="mt-8 flex flex-col sm:flex-row gap-4"
+            >
+              <Button
+                size="lg"
+                className="glow-sm hover:glow transition-all duration-300"
+                onClick={() => scrollToSection("#projects")}
+              >
+                View Projects
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-primary/50 hover:bg-primary/10"
+                onClick={() => scrollToSection("#contact")}
+              >
+                Contact Me
+              </Button>
+              <Button
+                size="lg"
+                variant="secondary"
+                className="hover:bg-secondary/80"
+                asChild
+              >
+                <a href="/new-cv-06.pdf" target="_blank" rel="noopener noreferrer" download="Yeswanth_CV.pdf">
+                  <Download className="w-4 h-4 mr-2" />
+                  Download CV
+                </a>
+              </Button>
+            </motion.div>
+
+            {/* Social Links */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 1 }}
+              className="mt-8 flex gap-4"
+            >
+              <a
+                href="https://github.com/yeswanthkumar09"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 rounded-full bg-secondary/50 text-muted-foreground hover:text-primary hover:bg-secondary transition-all duration-300 hover:glow-sm"
+              >
+                <Github className="w-5 h-5" />
               </a>
-            </Button>
-          </motion.div>
-
-          {/* Social Links */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 1 }}
-            className="mt-8 flex gap-4"
-          >
-            <a
-              href="https://github.com/yeswanthkumar09"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-3 rounded-full bg-secondary/50 text-muted-foreground hover:text-primary hover:bg-secondary transition-all duration-300 hover:glow-sm"
-            >
-              <Github className="w-5 h-5" />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/yeswanthkumaragathamudi/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-3 rounded-full bg-secondary/50 text-muted-foreground hover:text-primary hover:bg-secondary transition-all duration-300 hover:glow-sm"
-            >
-              <Linkedin className="w-5 h-5" />
-            </a>
-            <a
-              href="mailto:yashagathamudi@gmail.com"
-              className="p-3 rounded-full bg-secondary/50 text-muted-foreground hover:text-primary hover:bg-secondary transition-all duration-300 hover:glow-sm"
-            >
-              <Mail className="w-5 h-5" />
-            </a>
-          </motion.div>
+              <a
+                href="https://www.linkedin.com/in/yeswanthkumaragathamudi/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 rounded-full bg-secondary/50 text-muted-foreground hover:text-primary hover:bg-secondary transition-all duration-300 hover:glow-sm"
+              >
+                <Linkedin className="w-5 h-5" />
+              </a>
+              <a
+                href="mailto:yashagathamudi@gmail.com"
+                className="p-3 rounded-full bg-secondary/50 text-muted-foreground hover:text-primary hover:bg-secondary transition-all duration-300 hover:glow-sm"
+              >
+                <Mail className="w-5 h-5" />
+              </a>
+            </motion.div>
+          </div>
         </div>
 
         {/* Scroll indicator */}
