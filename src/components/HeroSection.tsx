@@ -12,7 +12,7 @@ export const HeroSection = () => {
   const smoothMouseX = useSpring(mouseX, springConfig);
   const smoothMouseY = useSpring(mouseY, springConfig);
 
-  const handleMouseMove = (e: React.MouseEvent) => {
+  const handleMouseMove = (e: React.MouseEvent<HTMLElement>) => {
     const { currentTarget, clientX, clientY } = e;
     const { left, top } = currentTarget.getBoundingClientRect();
     mouseX.set(clientX - left);
