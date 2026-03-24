@@ -2,6 +2,7 @@ import { motion, useMotionValue, useSpring, useTransform, useMotionTemplate } fr
 import { ArrowDown, Github, Linkedin, Mail, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import React from "react";
+import profileImg from "@/assets/profile-img.jpg";
 
 export const HeroSection = () => {
   const mouseX = useMotionValue(0);
@@ -52,17 +53,17 @@ export const HeroSection = () => {
 
       <div className="container mx-auto px-4 md:px-8 relative z-10 pt-24 md:pt-32">
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
-          {/* Emoji Avatar */}
+          {/* Profile photo */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.5 }}
+            initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
             className="relative mb-8"
           >
-            <div className="w-32 h-32 md:w-40 md:h-40 rounded-full bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center text-6xl md:text-7xl shadow-2xl border border-primary/20 backdrop-blur-sm">
-              👨‍💼
+            <div className="w-56 h-56 md:w-60 md:h-60 rounded-full overflow-hidden border-4 border-primary shadow-lg">
+              <img src={profileImg} alt="Yeswanth Kumar" className="w-full h-full object-cover" />
             </div>
-            <motion.div 
+            <motion.div
               animate={{ scale: [1, 1.1, 1] }}
               transition={{ duration: 2, repeat: Infinity }}
               className="absolute -bottom-2 -right-2 bg-background p-2 rounded-full border border-primary/20 shadow-lg"
@@ -70,6 +71,7 @@ export const HeroSection = () => {
               💻
             </motion.div>
           </motion.div>
+
 
           {/* Name */}
           <motion.h1
