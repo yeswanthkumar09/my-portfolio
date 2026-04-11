@@ -2,7 +2,7 @@ import { motion, useMotionValue, useSpring, useTransform, useMotionTemplate } fr
 import { ArrowDown, Github, Linkedin, Mail, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import React from "react";
-import profileImg from "@/assets/profile-img.jpg";
+import profileImg from "@/assets/my-img.jpeg";
 
 export const HeroSection = () => {
   const mouseX = useMotionValue(0);
